@@ -1,0 +1,255 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+@import 'variables.less';
+
+/* ==========================================================================
+   Modules
+   ========================================================================== */
+@import 'modules/buttons.less';
+@import 'modules/navbar.less';
+@import 'modules/header.less';
+@import 'modules/containers.less';
+@import 'modules/survey.less';
+
+
+/* ==========================================================================
+   Core
+   ========================================================================== */
+body {
+	background: @clouds;
+	color: @bodyTextColor;
+	font-family: 'Open Sans';
+
+	.content {
+		margin-top: 25px;
+		margin-bottom: 25px;
+
+		> .container {
+
+			> .row {
+
+				> [class^=col-] {
+
+					> .box:last-child {
+						
+						@media (min-width: 769px) {
+							margin: 0;
+						}
+					}
+
+					&.separator-line-left {
+						border-left: 4px solid darken(@clouds, 3%);
+					}
+
+					&.separator-line-right {
+						border-right: 4px solid darken(@clouds, 3%);
+					}
+
+					&:first-child {
+
+						.box {
+							position: relative;
+
+							&:after {
+								content: '';
+								height: 0;
+								width: 0;
+								position: absolute;
+								top: 50%;
+								right: -22px;
+								margin-top: -12px;
+								border: solid transparent;
+								border-color: rgba(255, 255, 255, 0);
+								border-left-color: @white;
+								border-width: 12px;
+								z-index: 10;
+
+								@media (max-width: 768px) {
+									display: none;
+								}
+							}
+
+							&:before {
+								content: '';
+								height: 10px;
+								width: 10px;
+								position: absolute;
+								top: 50%;
+								right: -22px;
+								background: fadeout(@nephritis, 70%);
+								border: 1px solid @white;
+								border-radius: 50%;
+								margin-top: -5px;
+								z-index: 10;
+
+								@media (max-width: 768px) {
+									display: none;
+								}
+							}
+						}
+					}
+
+					&:last-child {
+
+						.box {
+							position: relative;
+
+							&:after {
+								content: '';
+								height: 0;
+								width: 0;
+								position: absolute;
+								top: 50%;
+								left: -22px;
+								margin-top: -12px;
+								border: solid transparent;
+								border-color: rgba(255, 255, 255, 0);
+								border-right-color: @white;
+								border-width: 12px;
+								z-index: 10;
+
+								@media (max-width: 768px) {
+									display: none;
+								}
+							}
+
+							&:before {
+								content: '';
+								height: 10px;
+								width: 10px;
+								position: absolute;
+								top: 50%;
+								left: -22px;
+								background: fadeout(@nephritis, 70%);
+								border: 1px solid @white;
+								border-radius: 50%;
+								margin-top: -5px;
+								z-index: 10;
+
+								@media (max-width: 768px) {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.font-small{
+	float: left;
+	font-size: 11px;
+	color: gray;
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.rules{
+	p{
+		.font-small
+	}
+}
+
+
+/* ==========================================================================
+   ChardinJS Fixes
+   ========================================================================== */
+.chardinjs-overlay {
+	opacity: .4 !important;
+}
+
+.chardinjs-tooltiptext {
+	background: rgba(0,0,0,.5);
+	text-align: center;
+	padding: 5px 0px;
+	border-radius: 3px;
+	margin-top: -5px;
+	font-size: 12px;
+}
+
+.chardinjs-helper-layer.chardinjs-top {
+	margin-top: -10px;
+}
+
+
+/* ==========================================================================
+  Form Validation
+   ========================================================================== */
+.has-error{
+	display: none !important;
+}
+
+.disclaimer{
+	
+	display: none;
+
+	&.incomplete{
+		display: block !important;
+
+		p{
+			.font-small
+		}
+	}
+}
+
+
+
+/* ==========================================================================
+  Confirmation and sharing
+   ========================================================================== */
+
+.hashtag{
+	color: #f39c12;
+}
+
+
+.share{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+
+  a.share-to{
+    display: inline-block;
+    margin: 55px 20px;
+    padding: 15px 20px;
+    border-radius: 2px;
+    width: 77px;
+
+    i{
+      font-size: 45px;
+      color: white;
+    }
+
+    &.facebook{
+      background: #4c66a4;
+      border: 1px solid #4c66a4;
+
+      &:hover{
+        background: white;
+
+
+        i{
+          color: #4c66a4;
+        }
+      }
+    }
+
+    &.twitter{
+      background: #55acee;
+      border: 1px solid #55acee;
+
+      &:hover{
+        background: white;
+
+
+        i{
+          color: #55acee;
+        }
+      }
+    }
+  }
+}
+

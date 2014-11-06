@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+	background: @belize;
+	text-align: center;
+	padding: 25px 0 40px 0;
+	border-bottom: 4px solid @white;
+
+	.headline {
+		margin: 30px 30px 20px;
+		line-height: 30px;
+		color: @white;
+
+		a {
+			color: @white;
+			border-bottom: 1px dotted @white;
+
+			&:hover, &:focus {
+				text-decoration: none;
+				color: lighten(@silver, 10%);
+			}
+		}
+	}
+}

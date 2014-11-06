@@ -1,0 +1,26 @@
+{
+  "name": "informaticalibre",
+  "version": "0.0.0",
+  "homepage": "www.informaticalibre.cr",
+  "authors": [
+    "www.informaticalibre.cr"
+  ],
+  "description": "Aplicacion web para el movimiento Informatica libre. Basado en Sails Framework",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "font-awesome": "~4.1.0",
+    "WOW": "~1.0.2",
+    "animate.css": "~3.2.0"
+  }
+}

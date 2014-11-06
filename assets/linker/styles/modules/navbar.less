@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+.navbar-default {
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	background: @orange;
+
+	.navbar-toggle {
+		background: @belize;
+		border-color: @river;
+
+		&:hover, &:focus {
+			background: lighten(@belize, 10%)
+		}
+
+		.icon-bar {
+			background: @white;
+		}
+	}
+	
+	.navbar-nav {
+
+		li {
+			position: relative;
+
+			a {
+				color: @white;
+				font-size: 20px;
+
+				&:hover, &:focus {
+					color: lighten(@silver, 15%);
+				}
+			}
+
+			&.active {
+
+				a {
+					color: @white;
+					background: none;
+
+					&:after {
+						bottom: 0;
+						left: 50%;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+						border-color: rgba(255, 255, 255, 0);
+						border-bottom-color: @belize;
+						border-width: 7px;
+						margin-left: -7px;
+
+						@media (max-width: 768px) {
+							display: none;
+						}
+					}
+
+					&:hover, &:focus {
+						color: lighten(@silver, 15%);
+						background: none;
+					}
+				}
+			}
+		}
+	}
+}
