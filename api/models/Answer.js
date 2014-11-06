@@ -41,6 +41,18 @@ module.exports = {
     agree : {
       type      : 'string',
       required  : true
+    },  
+
+    facebook_profile_name{
+      type : 'string'
+    },
+
+    facebook_profile_url{
+      type : 'string'
+    },
+
+    facebook_profile_picture{
+      type : 'string'
     },
 
     company_name : {
@@ -53,7 +65,25 @@ module.exports = {
 
     age : {
       type : 'string'
+    },
+
+    testimonial : {
+      type : 'string'
+    },
+
+    agree_publish : {
+      type : 'boolean'
+    },
+
+    name : {
+      type : 'string'
+    },
+
+    identification : {
+      type : 'string'
     }
+
+
   }
 
 

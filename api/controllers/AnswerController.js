@@ -45,29 +45,50 @@ module.exports = {
 
     //If the correct data is on the request...
     //... we create local variables for the data save
-    var req_degree        = req.body.degree;
-    var req_certification = req.body.certification;
-    var req_employment    = req.body.employment;
-    var req_experience    = req.body.experience;
-    var req_cpic          = req.body.cpic;
-    var req_agree         = req.body.agree;
-    var req_company_name  = req.body.company_name;
-    var req_gender        = req.body.gender;
-    var req_age           = req.body.age;
+    var req_degree          = req.body.degree;
+    var req_certification   = req.body.certification;
+    var req_employment      = req.body.employment;
+    var req_experience      = req.body.experience;
+    var req_cpic            = req.body.cpic;
+    var req_agree           = req.body.agree;
+    var req_company_name    = req.body.company_name;
+    var req_gender          = req.body.gender;
+    var req_age             = req.body.age;
+    var req_face_name       = req.body.facebook_username;
+    var req_face_picture    = req.body.facebook_user_picture;
+    var req_face_url        = req.body.facebook_profile_url;
+    var req_testimonial     = req.body.testimonial;
+
+    if(req.body.agree == null){
+      var req_agree_publish = false;
+    }else{
+      var req_agree_publish = req.body.agree;
+    }
+    var req_name            = req.body.name;
+    var req_identification  = req.body.identification;
+
+
 
 
     // Create a new Respondent record based from the local vars
     Answer.create({
 
-      "degree"        : req_degree,
-      "certification" : req_certification,
-      "employment"    : req_employment,
-      "experience"    : req_experience,
-      "cpic"          : req_cpic,
-      "agree"         : req_agree,
-      "company_name"  : req_company_name,
-      "gender"        : req_gender,
-      "age"           : req_age
+      "degree"                    : req_degree,
+      "certification"             : req_certification,
+      "employment"                : req_employment,
+      "experience"                : req_experience,
+      "cpic"                      : req_cpic,
+      "agree"                     : req_agree,
+      "company_name"              : req_company_name,
+      "gender"                    : req_gender,
+      "age"                       : req_age,
+      "facebook_profile_name"     : req_face_name,
+      "facebook_profile_url"      : req_face_url,
+      "facebook_profile_picture"  : req_face_picture,
+      "testimonial"               : req_testimonial,
+      "agree_publish"             : req_agree_publish,
+      "name"                      : req_name,
+      "identification"            : req_identification
 
       //When done saving the record...
     }).done(function (err, answer) {
@@ -195,10 +216,6 @@ module.exports = {
           }
 
         });
-
-
-
-
 
   },
 
