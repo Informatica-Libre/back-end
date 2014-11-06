@@ -43,15 +43,15 @@ module.exports = {
       required  : true
     },  
 
-    facebook_profile_name{
+    facebook_profile_name:{
       type : 'string'
     },
 
-    facebook_profile_url{
+    facebook_profile_url:{
       type : 'string'
     },
 
-    facebook_profile_picture{
+    facebook_profile_picture:{
       type : 'string'
     },
 

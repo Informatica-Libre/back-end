@@ -62,7 +62,7 @@ module.exports = {
     if(req.body.agree == null){
       var req_agree_publish = false;
     }else{
-      var req_agree_publish = req.body.agree;
+      var req_agree_publish = req.body.agree_publish;
     }
     var req_name            = req.body.name;
     var req_identification  = req.body.identification;
