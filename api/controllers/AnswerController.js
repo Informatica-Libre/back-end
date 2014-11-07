@@ -91,7 +91,8 @@ module.exports = {
       "testimonial"               : req_testimonial,
       "agree_publish"             : req_agree_publish,
       "name"                      : req_name,
-      "identification"            : req_identification
+      "identification"            : req_identification,
+      "aproved_by_admin"          : false
 
       //When done saving the record...
     }).done(function (err, answer) {

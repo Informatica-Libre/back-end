@@ -72,6 +72,11 @@ module.exports = {
       type : 'string'
     },
 
+    aproved_by_admin : {
+      type : 'boolean',
+      defaultsTo: false
+    },
+
     testimonial : {
       type : 'string'
     },
