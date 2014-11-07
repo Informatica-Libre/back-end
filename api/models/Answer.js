@@ -23,6 +23,11 @@ module.exports = {
       required  : true
     },
 
+    work_area : {
+      type      : 'string',
+      required  : true
+    },
+
     employment : {
       type      : 'string',
       required  : true

@@ -30,6 +30,7 @@ module.exports = {
     if( req.body.degree           == null ||
         req.body.certification    == null ||
         req.body.employment       == null ||
+        req.body.work_area        == null ||
         req.body.experience       == null ||
         req.body.cpic             == null ||
         req.body.agree            == null){
@@ -48,6 +49,7 @@ module.exports = {
     var req_degree          = req.body.degree;
     var req_certification   = req.body.certification;
     var req_employment      = req.body.employment;
+    var req_workarea        = req.body.work_area;
     var req_experience      = req.body.experience;
     var req_cpic            = req.body.cpic;
     var req_agree           = req.body.agree;
@@ -76,6 +78,7 @@ module.exports = {
       "degree"                    : req_degree,
       "certification"             : req_certification,
       "employment"                : req_employment,
+      "work_area"                 : req_workarea,
       "experience"                : req_experience,
       "cpic"                      : req_cpic,
       "agree"                     : req_agree,
