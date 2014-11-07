@@ -128,10 +128,8 @@ module.exports = {
     Answer.count(function (err, num) {
 
       if(err) {
-
         console.log('error while returning the total number of answer' + JSON.stringify(err) );
         return res.json({error : err}, 404);
-
       }else{
 
         console.log(num + ' Total respondents on the database');
