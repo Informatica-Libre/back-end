@@ -40,7 +40,7 @@ module.exports.routes = {
   //Respondent routes mapping
   'post /answer/create'     : 'AnswerController.create',
   'get /answer/count'       : 'AnswerController.count',
-  'get /reports/rejection'  : 'AnswerController.rejection'
+  'get /reports/basic'  : 'AnswerController.basic'
 
 
 };

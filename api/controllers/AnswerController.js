@@ -145,16 +145,16 @@ module.exports = {
 
 
   /**
-   * Return count data for Rejection Char report.
+   * Return count data for Basic Chart report.
    * @param {Object} req HTTP request object.
    * @param {Object} res HTTP response object.
    * @param {callback} next callback function.
+   * @TODO : Move the mess with the callbacks to use Promises with Q
    */
-  'rejection': function (req, res, next)
+  'basic': function (req, res, next)
   {
 
     //Variables to send back to the front-end for the chart
-
     var rejection = {
       no_title              : null,
       with_title            : null,  //Will have the total of people with title
@@ -194,29 +194,57 @@ module.exports = {
               }else{
                 rejection.with_title = total;
                 
-                    
+                  
                     //The counts the people who belongs to the CPIC
                     Answer.count( )
-                        .where({ cpic : "Si" })
+                        .where({ cpic : true })
                         .exec(function (err, total){
                     if(err) {
                       return res.json({error : err}, 404);
                     }else{
                       rejection.belongs_to_cpic = total;
                       
-                      console.log(rejection);
-                    }
-                    
+                      //The counts the people who belongs to the CPIC
+                      Answer.count( )
+                          .where({ agree : true })
+                          .exec(function (err, total){
+                            if(err) {
+                              return res.json({error : err}, 404);
+                            }else{
+                              rejection.agree_with_cpic = total;
+                              
+                              //The counts the people who belongs to the CPIC
+                              Answer.count( )
+                                .where({ agree : false })
+                                .exec(function (err, total){
+                                  if(err) {
+                                    return res.json({error : err}, 404);
+                                  }else{
+                                    rejection.not_agree_with_cpic = total;
+                                    
+                                    Answer.count( function(err, total_answers){
+
+                                      if(err) {
+                                        return res.json({error : err}, 404);
+                                      }else{
+
+                                          return res.json(
+                                            {
+                                              total : total_answers,
+                                              values : rejection
+                                            }, 200);
+                                        }
+                                    });
+                                  }
+                              });
+                            }
+                      });
+                    }    
                   });
-
               }
-              
             });
-
           }
-
         });
-
   },
 
 

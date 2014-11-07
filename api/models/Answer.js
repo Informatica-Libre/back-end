@@ -19,7 +19,7 @@ module.exports = {
     },
 
     certification : {
-      type      : 'string',
+      type      : 'boolean',
       required  : true
     },
 
@@ -34,12 +34,12 @@ module.exports = {
     },
 
     cpic : {
-      type      : 'string',
+      type      : 'boolean',
       required  : true
     },
 
     agree : {
-      type      : 'string',
+      type      : 'boolean',
       required  : true
     },  
 
