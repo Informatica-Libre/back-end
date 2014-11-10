@@ -85,6 +85,12 @@ module.exports = {
       type : 'boolean'
     },
 
+    email:{
+      type: 'email',
+      unique: true,
+      required : true
+    },
+
     name : {
       type : 'string'
     },

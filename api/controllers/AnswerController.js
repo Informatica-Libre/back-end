@@ -33,7 +33,8 @@ module.exports = {
         req.body.work_area        == null ||
         req.body.experience       == null ||
         req.body.cpic             == null ||
-        req.body.agree            == null){
+        req.body.agree            == null ||
+        req.body.email            == null){
 
       return res.json(
         {
@@ -46,28 +47,29 @@ module.exports = {
 
     //If the correct data is on the request...
     //... we create local variables for the data save
-    var req_degree          = req.body.degree;
-    var req_certification   = req.body.certification;
-    var req_employment      = req.body.employment;
-    var req_workarea        = req.body.work_area;
-    var req_experience      = req.body.experience;
-    var req_cpic            = req.body.cpic;
-    var req_agree           = req.body.agree;
-    var req_company_name    = req.body.company_name;
-    var req_gender          = req.body.gender;
-    var req_age             = req.body.age;
-    var req_face_name       = req.body.facebook_username;
-    var req_face_picture    = req.body.facebook_user_picture;
-    var req_face_url        = req.body.facebook_profile_url;
-    var req_testimonial     = req.body.testimonial;
+    var req_degree          = req.body.degree,
+        req_certification   = req.body.certification,
+        req_employment      = req.body.employment,
+        req_workarea        = req.body.work_area,
+        req_experience      = req.body.experience,
+        req_cpic            = req.body.cpic,
+        req_agree           = req.body.agree,
+        req_company_name    = req.body.company_name,
+        req_gender          = req.body.gender,
+        req_age             = req.body.age,
+        req_face_name       = req.body.facebook_username,
+        req_face_picture    = req.body.facebook_user_picture,
+        req_face_url        = req.body.facebook_profile_url,
+        req_testimonial     = req.body.testimonial,
+        req_email           = req.body.email;
 
     if(req.body.agree == null){
       var req_agree_publish = false;
     }else{
       var req_agree_publish = req.body.agree_publish;
     }
-    var req_name            = req.body.name;
-    var req_identification  = req.body.identification;
+    var req_name            = req.body.name,
+        req_identification  = req.body.identification;
 
 
 
@@ -92,7 +94,8 @@ module.exports = {
       "agree_publish"             : req_agree_publish,
       "name"                      : req_name,
       "identification"            : req_identification,
-      "aproved_by_admin"          : false
+      "aproved_by_admin"          : false,
+      "email"                     : req_email
 
       //When done saving the record...
     }).done(function (err, answer) {
